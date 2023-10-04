@@ -1,1 +1,1 @@
-# I will be updating this repo from tomorrow (Day-10), with my MERN stack learnings.
+# I am updating this repo from Day-10, with my MERN stack learnings.
