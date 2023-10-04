@@ -1,0 +1,85 @@
+:root {
+  --primary: red;
+  --secondary: blue;
+  --next: yellow;
+  --more: green;
+}
+
+h1 {
+  /* color: cadetblue; */
+  text-shadow: 4px 2px 6px var(--primary), 5px 2px 6px var(--secondary);
+  transition: font-size 2s, color 2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 1s;
+}
+
+div {
+  --bg: pink;
+  background-color: var(--bg);
+  position: relative;
+  height: 100px;
+  width: 100px;
+  box-shadow: 4px 5px 6px var(--next) inset, 5px 3px 6px var(--more);
+  /* transition-property: width;
+  transition-duration: 2s; */
+  /* transition: width 2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 1s; */
+  /* animation-name: example;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: 6; */
+  animation: example 5s 1s 3;
+}
+
+@keyframes example {
+  /* from {
+    background-color: var(--bg);
+  }
+  to {
+    background-color: cadetblue;
+  } */
+  0% {
+    background-color: black;
+    left: 0;
+    top: 0;
+  }
+  25% {
+    background-color: green;
+    left: 100px;
+    top: 0;
+  }
+  50% {
+    background-color: greenyellow;
+    left: 100px;
+    top: 100px;
+  }
+  75% {
+    background-color: blue;
+    left: 0;
+    top: 100px;
+  }
+  100% {
+    background-color: violet;
+    left: 0;
+    top: 0;
+  }
+}
+
+div:hover {
+  width: 200px;
+}
+
+h1:hover {
+  font-size: 50px;
+  color: var(--secondary);
+}
+
+p {
+  font-size: 20px;
+  color: var(--secondary);
+  column-count: 3;
+  /* column-rule-style: solid;
+  column-rule-color: var(--more); */
+  column-rule: 5px solid var(--primary);
+}
