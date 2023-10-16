@@ -55,3 +55,25 @@ if (have_id2) {
 }
 
 // data_Types, conditionlas, null, undefined, NaN
+
+var e = [1, 2, 3];
+console.log("Before:", e);
+e.push(4);
+console.log("After :", e);
+
+let a = 2;
+let b = "Saujal";
+let c = [1, 2];
+let d = { name: "Saujal", caste: "Karki" };
+let k = true;
+let f = null;
+let g = new Date();
+console.log(g);
+
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+console.log(typeof d);
+console.log(typeof f);
+console.log(typeof g);
+console.log(typeof k);
