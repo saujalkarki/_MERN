@@ -37,3 +37,44 @@ console.log(array[0][0].concat(array[1][2]));
 
 console.log(array.flat());
 console.log(array.flat(2));
+
+let s = [1, 2, 3];
+let t = ["apple", "ball", "cat"];
+let u = [1, "apple", 2, "cat"];
+
+console.clear();
+console.log(s);
+console.log(t);
+console.log(u);
+
+console.log(s.length);
+console.log(u.length);
+
+s.push(4, 5, 6);
+console.log(s);
+console.log(s.shift(0));
+console.log(s);
+console.log(s.pop());
+console.log(s);
+console.log(s.unshift(4));
+console.log(s);
+
+console.log(s[2]);
+
+let abc = [1, 2, 4, 3];
+
+console.log(abc);
+abc.sort();
+console.log(abc);
+
+abc.sort((a, b) => {
+  return a - b;
+});
+
+console.log(abc);
+
+abc.sort((a, b) => {
+  return b - a;
+});
+
+console.log(abc);
