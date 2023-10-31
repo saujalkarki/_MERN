@@ -139,3 +139,5 @@ console.log(circle1);
 console.log(circle1.calculateArea());
 console.log(rectangle1);
 console.log(rectangle1.calculateArea());
+
+console.clear();

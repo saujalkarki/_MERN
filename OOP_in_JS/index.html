@@ -6,6 +6,18 @@
     <title>Document</title>
   </head>
   <body style="background-color: aquamarine">
+    <h1 id="heading">Heading 1</h1>
+    <button
+      onclick="document.getElementById('heading').innerHTML='Heading Changed' "
+    >
+      Change Heading
+    </button>
+    <button onclick="document.getElementById('heading').style.color= 'red'">
+      Change Color
+    </button>
+    <p>5+5=<span id="sum"></span></p>
+    <button onclick="generateSum()">Sum</button>
     <script src="./script.js"></script>
+    <script src="./async.js"></script>
   </body>
 </html>
