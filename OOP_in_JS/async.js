@@ -108,4 +108,8 @@ promise1
   })
   .catch((rjctVal) => {
     console.log(`rejected ${rjctVal}`);
+  })
+  .finally(() => {
+    // finally runs in both cases either resolved or rejected
+    console.log("Duniya banai mene hato se!");
   });
