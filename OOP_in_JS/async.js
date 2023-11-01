@@ -47,19 +47,19 @@ func5(func1);
 
 // using callback function
 
-function generateSum() {
-  function displaySum(sum) {
-    setTimeout(() => (document.getElementById("sum").innerHTML = sum), 2000);
-  }
+// function generateSum() {
+//   function displaySum(sum) {
+//     setTimeout(() => (document.getElementById("sum").innerHTML = sum), 2000);
+//   }
 
-  function calculateSum(num1, num2, cb) {
-    const sum = num1 + num2;
-    cb(sum);
-  }
-  calculateSum(5, 5, displaySum);
-}
+//   function calculateSum(num1, num2, cb) {
+//     const sum = num1 + num2;
+//     cb(sum);
+//   }
+//   calculateSum(5, 5, displaySum);
+// }
 
-setTimeout(() => console.log("hey this is a setTimeout function"), 3000);
+// setTimeout(() => console.log("hey this is a setTimeout function"), 1000);
 // setInterval(() => console.log("This will pop-up every 3 second"), 3000);
 
 // callback hell
@@ -84,11 +84,13 @@ func6(2, function (sum1) {
   });
 });
 
+/*
 // promise
 // pending, fullfilled, rejected
 const promise1 = new Promise(function (resolve, reject) {
   //   producing code
-  resolve("yeah 1");
+  // resolve("yeah 1");
+  //either it is resolved or rejected
   reject("Oh no 1");
 });
 
@@ -113,3 +115,134 @@ promise1
     // finally runs in both cases either resolved or rejected
     console.log("Duniya banai mene hato se!");
   });
+*/
+
+// callback using promise
+function generateSum() {
+  function displaySum(sum) {
+    const promise2 = new Promise((resolve, reject) => {
+      setTimeout(() => resolve(sum), 0);
+    });
+    promise2
+      .then((value) => {
+        document.getElementById("sum").innerHTML = value;
+      })
+      .catch((err) => console.log("err", err))
+      .finally(() => console.log("promise completed"));
+  }
+
+  function calculateSum(num1, num2, cb) {
+    const sum = num1 + num2;
+    cb(sum);
+  }
+  calculateSum(5, 5, displaySum);
+}
+
+// Error Handling
+console.clear();
+console.log("---Error handling start---");
+
+function func9(value, cb) {
+  if (typeof value === "number") {
+    cb(null, value);
+  } else {
+    cb("not a number", null);
+  }
+}
+
+function func10(err, value) {
+  if (err) {
+    console.log("Error", err);
+  } else {
+    console.log("value", value);
+  }
+}
+
+func9("1", func10);
+// func9(1, func10);
+
+console.log("---Error handling End---");
+
+// promise chaining
+const promise3 = new Promise((resolve, reject) => {
+  // producing code
+  resolve(10);
+  // reject(0);
+});
+
+promise3
+  // consuming code
+  .then((value) => {
+    console.log("1", value);
+    return (value += 1);
+  })
+  .then((value) => {
+    console.log("2", value);
+    return (value += 1);
+  })
+  .then((value) => {
+    console.log("3", value);
+  })
+  .catch((error) => {
+    console.log("Error in chaining", error);
+  })
+  .finally(() => {
+    console.log("finally completed");
+  });
+
+// promise.all, promise.any
+const promise4 = Promise.resolve(2);
+const promise5 = 12; //if it is nither resoved nor rejected, it will give the resolved value
+const promise6 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 265);
+});
+const promise7 = "Saujal";
+
+Promise.all([promise4, promise5, promise6, promise7]).then((values) => {
+  console.log(values);
+});
+
+Promise.any([promise7, promise5, promise6, promise4]).then((values) => {
+  console.log("promise method", values);
+});
+
+// async/await
+// example 1
+const promise8 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(24) /*reject(25)*/, 3000);
+});
+
+async function asyncfunc1() {
+  console.log("Before await");
+  const data = await promise8;
+  console.log("Data", data);
+  console.log("After await");
+  return data;
+  // return "async func 1";
+  // throw new Error("Async Error 1");
+}
+
+asyncfunc1()
+  .then((value) => {
+    console.log("value", value);
+  })
+  .catch((err) => {
+    console.log("error", err);
+  })
+  .finally(console.log("this is completed"));
+
+// example 2
+// async function asyncfunc1() {
+//   const data = await "Saujal";
+//   return data;
+//   // return "async func 1";
+//   // throw new Error("Async Error 1");
+// }
+
+// asyncfunc1()
+//   .then((value) => {
+//     console.log(value);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
