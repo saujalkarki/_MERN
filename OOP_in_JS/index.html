@@ -17,8 +17,66 @@
     </button>
     <p>5+5=<span id="sum"></span></p>
     <button onclick="generateSum()">Sum</button>
+
+    <div id="div">
+      <p id="paragraph">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos illum
+        saepe quibusdam impedit nobis perspiciatis! Illum quos possimus dicta
+        voluptate suscipit invent in. Ipsum ea repudiandae totam delectus magni
+        fugiat autem, voluptatibus quas recusandae ab odio nisi quo nostrum sed
+        minus velit saepe mollitia.
+      </p>
+    </div>
+    <button onclick="addPTag()">Add p tag</button>
+    <button onclick="removeExistingPTag()">Remove Existing p tag</button>
+    <button onclick="removeAddedPTag()">Remove Added p tag</button>
+    <button onclick="replaceExistingPTag()">Replace Existing p tag</button>
+    <button onclick="replaceAddedPTag()">Replace Added p tag</button>
+
+    <form
+      name="registerUser"
+      action="./index.html"
+      onsubmit="validateForm()"
+      method="get"
+    >
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text" placeholder="John doe" name="fullName" />
+      <span id="fullNameValidationMessage"></span>
+      <br />
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="text"
+        name="email"
+        placeholder="example@gmail.com"
+      />
+      <span id="emailValidationMessage"></span>
+      <br />
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="password"
+      />
+      <span id="passwordValidationMessage"></span>
+      <br />
+      <button type="submit">Save</button>
+    </form>
+
+    <div id="web-api"></div>
+    <button onclick="saveToStorage()">Save to web storage</button>
+    <button onclick="getFromStorage()">Get from web storage</button>
+    <button onclick="clearStorage()">Clear storage</button>
+
+    <button onclick="getHistory()">History</button>
+    <button onclick="goBack()">Go Back</button>
+
     <script src="./script.js"></script>
     <script src="./async.js"></script>
     <script src="./event-loop.js"></script>
+    <script src="./form.js"></script>
+    <script src="./node.js"></script>
+    <script src="./webapi.js"></script>
   </body>
 </html>
