@@ -206,7 +206,8 @@ Promise.any([promise7, promise5, promise6, promise4]).then((values) => {
   console.log("promise method", values);
 });
 
-// async/await
+// async/await/fetch
+
 // example 1
 const promise8 = new Promise((resolve, reject) => {
   setTimeout(() => resolve(24) /*reject(25)*/, 3000);
@@ -246,3 +247,25 @@ asyncfunc1()
 //   .catch((err) => {
 //     console.log(err);
 //   });
+
+async function fetchApi() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  if (response.ok) {
+    const data = await response.json();
+    return { ...data, userId: 65 };
+  }
+  if (response.status !== 200) {
+    throw new Error("Error found");
+  }
+}
+
+fetchApi()
+  .then((value) => console.log("valueAPI", value))
+  .catch((error) => console.log("errorAPI", error));
+
+// fetch always returns Promise
+const response = fetch("https://jsonplaceholder.typicode.com/posts/1");
+
+response
+  .then((value) => console.log("value", value))
+  .catch((error) => console.log("error", error));
