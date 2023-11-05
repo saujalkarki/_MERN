@@ -1,0 +1,13 @@
+{
+    "TYPE": "JSON",
+    "name": "Saujal",
+    "caste": "Karki",
+    "age": 17,
+    "University": "TU",
+    "Games": ["Football", "Basketball"],
+    "location": {
+        "country": "Nepal",
+        "city": "Itahari"
+    }
+}
+

@@ -11,10 +11,10 @@ function validateForm() {
     "fullNameValidationMessage"
   );
   const emailValidationMessage = document.getElementById(
-    "fullNameValidationMessage"
+    "emailValidationMessage"
   );
   const passwordValidationMessage = document.getElementById(
-    "fullNameValidationMessage"
+    "passwordValidationMessage"
   );
 
   const names = fullName.split(" ");
@@ -42,4 +42,6 @@ function validateForm() {
     passwordValidationMessage.innerHTML = "please use strong password";
     return false;
   }
+
+  return true;
 }
