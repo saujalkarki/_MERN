@@ -68,12 +68,18 @@ import {
 //   );
 // }
 
+// function App() {
+//   return (
+//     <>
+//       <LearnMemorization />
+//     </>
+//   );
+// }
+
+// export default App;
+
 function App() {
-  return (
-    <>
-      <LearnMemorization />
-    </>
-  );
+  return <h1>Hello world</h1>;
 }
 
 export default App;
