@@ -1,7 +1,13 @@
+import Header from "./Header";
+import Game from "./Game";
+import Footer from "./Footer";
+
 export function TicTacToe() {
   return (
     <>
-      <h1>Hello Tic Tac Toe</h1>
+      <Header />
+      <Game />
+      <Footer />
     </>
   );
 }
