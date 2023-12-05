@@ -1,14 +1,10 @@
 import { useState } from "react";
 
 export default function Input({ mainInp, inp1, inp2, inp3 }) {
-  const [inpXO, setInpXO] = useState("X");
+  const [inpXO, setInpXO] = useState(null);
 
   function handleClick(a) {
     a.target.blur();
-  }
-
-  function handleChange(a) {
-    a.target.value = inpXO;
     setInpXO((inp) => (inp === "X" ? "O" : "X"));
   }
 
@@ -17,24 +13,28 @@ export default function Input({ mainInp, inp1, inp2, inp3 }) {
       <input
         type="text"
         className={inp1}
-        onClick={handleClick}
-        onChange={(e) => {
-          handleChange(e);
+        onClick={(e) => {
+          handleClick(e);
         }}
+        value={inpXO || ""}
         readOnly
       />
       <input
         type="text"
         className={inp2}
-        onClick={handleClick}
-        onChange={handleChange}
+        onClick={(e) => {
+          handleClick(e);
+        }}
+        value={inpXO || ""}
         readOnly
       />
       <input
         type="text"
         className={inp3}
-        onClick={handleClick}
-        onChange={handleChange}
+        onClick={(e) => {
+          handleClick(e);
+        }}
+        value={inpXO || ""}
         readOnly
       />
     </div>
