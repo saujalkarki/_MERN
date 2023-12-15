@@ -1,7 +1,9 @@
-export default function Footer() {
+export default function Footer({ onReset }) {
   return (
     <div className="footer">
-      <button className="resetBtn">Reset</button>
+      <button className="resetBtn" onClick={onReset}>
+        Reset
+      </button>
     </div>
   );
 }
