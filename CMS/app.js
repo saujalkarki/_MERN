@@ -85,6 +85,8 @@ app.patch("/updateBlog/:id", async (req, res) => {
 
   const { title, subTitle, description } = req.body;
 
+  console.log(req.params);
+  console.log(req.body);
   await Blog.findByIdAndUpdate(id, {
     title,
     subTitle,
