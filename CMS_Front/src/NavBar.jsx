@@ -1,7 +1,7 @@
-function NavBar({ children }) {
+function NavBar() {
   return (
     <div>
-      <h1>{children}</h1>
+      <h1>This is a NavBar</h1>
     </div>
   );
 }
