@@ -6,15 +6,6 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
-// function App() {
-//   return (
-//     <Fragment>
-//       <NavBar />
-//       <h1 style={{ color: "blue" }}>{11 + 10} is sum</h1>
-//     </Fragment>
-//   );
-// }
-
 // using react-router-dom
 function App() {
   return (
